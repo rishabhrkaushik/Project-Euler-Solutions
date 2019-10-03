@@ -1,7 +1,12 @@
 #!/bin/python3
 
 """
-https://www.hackerrank.com/contests/projecteuler/challenges/euler005
+    Author: Rishabh Kaushik
+    e-mail: rishabhrkaushik@gmail.com
+    website: https://rishabhrkaushik.github.io
+
+    Purpose: This is part of the series to the solution to Project Euler.
+    Problem Statement: https://www.hackerrank.com/contests/projecteuler/challenges/euler005
 """
 
 import sys
@@ -26,7 +31,7 @@ def calculateFactor(factors):
                     factors.append(m//i)
                     break
     return calculateFactor(factors)
-    
+
 def findLCM(n):
     list_of_factors = []
     # calculate factors of all numbers less than equal to n

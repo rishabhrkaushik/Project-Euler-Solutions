@@ -1,7 +1,12 @@
 #!/bin/python3
 
 """
-https://www.hackerrank.com/contests/projecteuler/challenges/euler007/problem
+    Author: Rishabh Kaushik
+    e-mail: rishabhrkaushik@gmail.com
+    website: https://rishabhrkaushik.github.io
+
+    Purpose: This is part of the series to the solution to Project Euler.
+    Problem Statement: https://www.hackerrank.com/contests/projecteuler/challenges/euler007/problem
 """
 
 import sys
@@ -13,7 +18,7 @@ allN = []
 for a0 in range(t):
     n = int(input().strip())
     # add all n to a list to find m prime numbers where m is largest n required
-    allN.append(n) 
+    allN.append(n)
 
 allPrimes = [2]
 currentNumber = 3
@@ -25,7 +30,7 @@ def isPrime(num, allPrimes):
         #print(prime)
         if (num % prime == 0):
             #print(False)
-            return False 
+            return False
     return True
 
 # add first m prime number to a list
