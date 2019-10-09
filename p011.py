@@ -1,7 +1,5 @@
 #!/bin/python3
 
-#!/bin/python3
-
 """
     Author: Rishabh Kaushik
     e-mail: rishabhrkaushik@gmail.com
