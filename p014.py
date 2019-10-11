@@ -6,7 +6,7 @@ numberOfElements = [1] * (MAXN + 1)
 t = int(input().strip())
 for a0 in range(t):
     inputN = int(input().strip())
-    indices = [i for i, x in enumerate(numberOfElements) if x == 1][2:inputN]
+    indices = [i for i, x in enumerate(numberOfElements[0:inputN]) if x == 1][2:]
     for i in indices:
     #     print("i: ", i)
         elements = [i]
@@ -33,7 +33,9 @@ for a0 in range(t):
 #         print("length: ", length)
 #         allElements[i] = elements
         numberOfElements[i] = length
-        indices = [i for i, x in enumerate(numberOfElements) if x == 1][2:n]
+        indices = [i for i, x in enumerate(numberOfElements[0:inputN]) if x == 1][2:]
     # print(allElements)
     # print(numberOfElements)
-    print(numberOfElements.index(max(numberOfElements[0:inputN])))
+    m = max(numberOfElements[2:inputN])
+    maxIndices = [i for i, x in enumerate(numberOfElements[0:inputN]) if x == m]
+    print(max(maxIndices))
