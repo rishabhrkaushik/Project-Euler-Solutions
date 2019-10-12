@@ -1,41 +1,38 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 
-MAXN = 15 * (10 ** 6)
+MAXN = 5 * (10 ** 6)
 numberOfElements = [1] * (MAXN + 1)
-# allElements = [[1]] * (MAXN + 1)
 t = int(input().strip())
 for a0 in range(t):
     inputN = int(input().strip())
-    indices = [i for i, x in enumerate(numberOfElements[0:inputN]) if x == 1][2:]
+    indices = [i for i, x in enumerate(numberOfElements[0:inputN+1]) if x == 1][2:]
     for i in indices:
-    #     print("i: ", i)
         elements = [i]
         n = i
         length = 1
         while(not n == 1):
-            if(not numberOfElements[n] == 1):
-#                 print("found: ")
-                length = length + numberOfElements[n] - 1
-#                 elements = elements + allElements[n][1:]
-#                 print("N: ", n)
-                break
-            elif(n%2 == 1):
-                n = int(3*n + 1)
+            if(n < MAXN):
+                if(not numberOfElements[n] == 1):
+                    length = length + numberOfElements[n] - 1
+                    break
+                elif(n%2 == 1):
+                    n = int(3*n + 1)
+                else:
+                    n = int(n/2)
             else:
-                n = int(n/2)
-#             print("n: ", n)
+                if(n%2 == 1):
+                    n = int(3*n + 1)
+                else:
+                    n = int(n/2)
             elements.append(n)
             length = length + 1
         for element in elements:
-            if(numberOfElements[element] == 1):
-                numberOfElements[element] = length - elements.index(element)
-#         print(elements)
-#         print("length: ", length)
-#         allElements[i] = elements
-        numberOfElements[i] = length
+            if(element < MAXN):
+                if(numberOfElements[element] == 1):
+                    numberOfElements[element] = length - elements.index(element)
+#         numberOfElements[i] = length
         indices = [i for i, x in enumerate(numberOfElements[0:inputN]) if x == 1][2:]
-    # print(allElements)
-    # print(numberOfElements)
-    m = max(numberOfElements[2:inputN])
-    maxIndices = [i for i, x in enumerate(numberOfElements[0:inputN]) if x == m]
+#     print(numberOfElements[0:inputN+1])
+    m = max(numberOfElements[0:inputN+1])
+    maxIndices = [i for i, x in enumerate(numberOfElements[0:inputN + 1]) if x == m]
     print(max(maxIndices))
